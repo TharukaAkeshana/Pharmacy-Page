@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: #d0e4ff;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+body p {
+  color: rgb(0, 0, 0);
+  transition: all 0.4s ease;
+}
+
+.back-icon {
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  font-weight: bolder;
+  justify-content: flex-end;
+}
+
+.back-icon a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.search h1 {
+  font-size: 3rem;
+  color: rgb(8, 39, 53);
+  margin-top: 7rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.checkout_container {
+  margin: 15px;
+  width: 500px;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(17, 12, 46, 0.1) 0px 48px 100px 0px;
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+  padding: 15px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.checkout_container .back-btn {
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.checkout_container .back-btn span {
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+
+.checkout_container h1 {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+.checkout_container .input-form {
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-form input {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.input-form ::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.input-form input[type="date"] {
+  background: rgba(255, 255, 255, 0.2);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 10px;
+}
+
+.checkout-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #006aff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-weight: 500;
+}
+
+.checkout-btn:hover {
+  transition: all 0.4s ease;
+  background-color: rgb(88, 142, 216);
+
+  border: solid 1px black;
+}
+
+.total-price-display {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 200;
+}
+
+#total-title-display {
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+
+.error-message {
+  color: rgb(11, 11, 11);
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form h1 {
+  color: black;
+}
+
+#formdiv {
+  max-width: 500px;
+}
+
+.forminput {
+  width: 100%;
+}
+
+.details {
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(240, 240, 240, 0.7));
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(20px) saturate(150%);
+  margin: 20px auto;
+  text-align: center;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 12px;
+  letter-spacing: 3px;
+}
+
+.details h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.details h1,
+.details h2 {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.details:hover h1,
+.details:hover h2 {
+  color: #d32f2f;
+}
+
+.details::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #d32f2f;
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.checkout_container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  flex: 3;
+  padding: 20px;
+}
+
+.total-container {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+
+.total-amount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.button1 {
+  background-color: #74a4f6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 150px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  background: #ffffff;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.success-box .Accepted-image .success-img {
+  width: 200px;
+  height: auto;
+}
+
+.success-box .hero-text h2 {
+  margin-bottom: 10px;
+}
+
+.success-box .hero-text .button {
+  margin-bottom: 40px;
+}

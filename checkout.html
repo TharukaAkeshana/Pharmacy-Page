@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+           
+    <div class="checkout_container">
+      
+      <div class="form-container">
+        <a href="index.html" class="back-btn"><span>&#60;</span>Back</a>
+       <div id="formdiv">
+        <h1>Checkout</h1>
+          <form method="POST" id="checkout-form" enctype="multipart/form-data">
+            <p class="back-icon"><a href="index.html">X</a></p>
+            <h4>Delivery Details</h4>
+      
+            <div class="input-form">
+              <input type="email" class="forminput" placeholder="Enter your email" name="email" id="email" required />
+            </div>
+      
+            <div class="input-form">
+              <input type="text" placeholder="Name" name="name" id="name" required />
+            </div>
+      
+            <div class="input-form">
+              <input type="text" placeholder="Contact Number" name="contact" id="contact" required />
+            </div>
+      
+            <div class="input-form">
+              <input type="text" placeholder="Delivery address" name="address" id="address" required />
+            </div>
+      
+            <div class="input-form">
+              <input type="text" placeholder="Postal Code" name="postal" id="postal" required />
+            </div>
+      
+          <!--label for="cardno">payment Details</label-->
+          <h4>Card Details</h4>
+  
+            <div class="input-form">
+              <input type="text" name="cardno" placeholder="Card number" id="cardno" required />
+            </div>
+  
+            <div class="input-form">
+              <input type="text" name="expire" placeholder="Expire date" id="expire" required />
+            </div>
+  
+            <div class="input-form">
+              <input type="text" name="cvv" placeholder="CVV" id="cvv" required />
+            </div>
+            
+            <button class="checkout-btn" name="checkout">Confirm Purchase</button>
+
+          </form>
+      </div>
+
+
+      <div class="total-container">
+          <h1>Your Order</h1>
+  <p>Total Amount: <span id="checkoutTotal"></span></p>
+
+  <script>
+      // Get the total amount from the URL parameters
+      var urlParams = new URLSearchParams(window.location.search);
+      var totalAmount = urlParams.get('total');
+
+      // Display the total amount
+      if (totalAmount) {
+          document.getElementById('checkoutTotal').textContent = totalAmount;
+      }
+      
+  </script>
+      </div>
+  </div>
+  </div>
+
+      
+    
+      <script src="checkout.js"></script>
+</body>
+</html>

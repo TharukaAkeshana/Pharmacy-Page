@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+  <!-- Box icons link -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+  <!-- Remix icon link -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+  <body>
+    <header id="top">
+      <img src="./images/logo.png" alt="" class="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Doctors</a></li>
+          <li><a href="">Reservations</a></li>
+          <li><a href="">Pharmacy</a></li>
+        </ul>
+      </nav>
+
+      <!-- cart -->
+      <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <!-- cart content -->
+        <div class="cart-content"></div>
+        <!-- total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">Rs0</div>
+        </div>
+        <!-- buy button -->
+        <button type="button" class="btn-buy">Order Now</button>
+        <!-- cart close -->
+        <i class="ri-close-line" id="close-cart"></i>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-container"></div>
+      <div class="search">
+        <h1>Catelogue</h1>
+
+        <input class="serchdock" type="text" id="productSearch" placeholder="Search for products"
+          onkeyup="filterProductsBySearch()" />
+      </div>
+    </section>
+
+    <section class="shop container">
+      <h1 class="text-cnter">Categories</h1>
+      <h2 class="text-cnter">Analgesics</h2>
+      <div class="medicine-scroller" id="menu-items">
+        <div class="product-box">
+          <img src="./images/Analgesics.jpg" alt="Analgesics" class="product-img" />
+          <h2 class="product-title">paracitamol 200g </h2>
+          <p class="product-description">$1 </p>
+          <input type="number" id="paracetamolQty" class="quantity" min="0" value="0" data-name="Paracetamol"
+            data-price="1" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Analgesics1.jpg" alt="Ibuprofen" class="product-img" />
+          <h2 class="product-title">Ibuprofen 400g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Ibuprofen" class="quantity" min="0" value="0" data-name="Ibuprofen"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Analgesics2.jpg" alt="Aspirin" class="product-img" />
+          <h2 class="product-title">Aspirin 400g</h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Aspirin" class="quantity" min="0" value="0" data-name="Aspirin"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Analgesics3.jpg" alt="Naproxen" class="product-img" />
+          <h2 class="product-title">Naproxen 100g</h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Naproxen" class="quantity" min="0" value="0" data-name="Naproxen"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Analgesics4.jpg" alt="Morphine" class="product-img" />
+          <h2 class="product-title">Morphine 150g</h2>
+          <p class="product-description">$8 </p>
+          <input type="number" id="Morphine" class="quantity" min="0" value="0" data-name="Morphine"
+            data-price="8" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Analgesics5.jpg" alt="Codeine" class="product-img" />
+          <h2 class="product-title">Codeine 250g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Codeine" class="quantity" min="0" value="0" data-name="Codeine"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="shop container">
+      <h2 class="text-cnter">Antibiotics</h2>
+      <div class="medicine-scroller" id="menu-items1">
+        <div class="product-box">
+          <img src="./images/anitbiotics.jpg" alt="Amoxicillin" class="product-img" />
+          <h2 class="product-title">Amoxicillin 200g </h2>
+          <p class="product-description">$10 </p>
+          <input type="number" id="Amoxicillin" class="quantity" min="0" value="0" data-name="Amoxicillin"
+            data-price="10" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/anitbiotics1.jpg" alt="Ciprofloxacin" class="product-img" />
+          <h2 class="product-title">Ciprofloxacin 400g</h2>
+          <p class="product-description">$15 </p>
+          <input type="number" id="Ciprofloxacin" class="quantity" min="0" value="0" data-name="Ciprofloxacin"
+            data-price="15" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/anitbiotics2.jpg" alt="Azithromycin" class="product-img" />
+          <h2 class="product-title">Azithromycin 300g</h2>
+          <p class="product-description">$12 </p>
+          <input type="number" id="Azithromycin" class="quantity" min="0" value="0" data-name="Azithromycin"
+            data-price="12" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/anitbiotics3.jpg" alt="Doxycycline" class="product-img" />
+          <h2 class="product-title">Doxycycline 250g</h2>
+          <p class="product-description">$20 </p>
+          <input type="number" id="Doxycycline" class="quantity" min="0" value="0" data-name="Doxycycline"
+            data-price="20" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/anitbiotics4.jpg" alt="Ceftriaxone" class="product-img" />
+          <h2 class="product-title">Ceftriaxone 500g</h2>
+          <p class="product-description">$30 </p>
+          <input type="number" id="Ceftriaxone" class="quantity" min="0" value="0" data-name="Ceftriaxone"
+            data-price="30" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/anitbiotics5.jpg" alt="Metronidazole" class="product-img" />
+          <h2 class="product-title">Metronidazole 100g</h2>
+          <p class="product-description">$10 </p>
+          <input type="number" id="Metronidazole" class="quantity" min="0" value="0" data-name="Metronidazole"
+            data-price="10" oninput="updateCart(this)">
+        </div>
+
+      </div>
+    </section>
+    <section class="shop container">
+      <h2 class="text-cnter">Antidepressants</h2>
+      <div class="medicine-scroller" id="menu-items2">
+        <div class="product-box">
+          <img src="./images/Antidepressants.jpg" alt="Fluoxetine " class="product-img" />
+          <h2 class="product-title">Fluoxetine  200g </h2>
+          <p class="product-description">$1 </p>
+          <input type="number" id="Fluoxetine" class="quantity" min="0" value="0" data-name="Fluoxetine"
+            data-price="1" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antidepressants1.jpg" alt="Sertraline" class="product-img" />
+          <h2 class="product-title">Sertraline 400g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Sertraline" class="quantity" min="0" value="0" data-name="Sertraline"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antidepressants2.jpg" alt="Citalopram" class="product-img" />
+          <h2 class="product-title">Citalopram 300g</h2>
+          <p class="product-description">$8 </p>
+          <input type="number" id="Citalopram" class="quantity" min="0" value="0" data-name="Citalopram"
+            data-price="8" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antidepressants3.jpg" alt="Amitriptyline" class="product-img" />
+          <h2 class="product-title">Amitriptyline 500g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Amitriptyline" class="quantity" min="0" value="0" data-name="Amitriptyline"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antidepressants4.jpg" alt="Duloxetine" class="product-img" />
+          <h2 class="product-title">Duloxetine 400g</h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Duloxetine" class="quantity" min="0" value="0" data-name="Duloxetine"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antidepressants5.jpg" alt="Venlafaxine" class="product-img" />
+          <h2 class="product-title">Venlafaxine 400g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Venlafaxine" class="quantity" min="0" value="0" data-name="Venlafaxine"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+      </div>
+    </section>
+    <section class="shop container">
+      <h2 class="text-cnter">Antihistamines</h2>
+      <div class="medicine-scroller" id="menu-items3">
+        <div class="product-box">
+          <img src="./images/Antihistamines.jpg" alt="Diphenhydramine" class="product-img" />
+          <h2 class="product-title">Diphenhydramine 250g </h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Diphenhydramine" class="quantity" min="0" value="0" data-name="Diphenhydramine"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihistamines2.jpg" alt="Loratadine" class="product-img" />
+          <h2 class="product-title">Loratadine 450g</h2>
+          <p class="product-description">$7 </p>
+          <input type="number" id="Loratadine" class="quantity" min="0" value="0" data-name="Loratadine"
+            data-price="7" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihistamines3.jpg" alt="Cetirizine" class="product-img" />
+          <h2 class="product-title">Cetirizine 100g</h2>
+          <p class="product-description">$8 </p>
+          <input type="number" id="Cetirizine" class="quantity" min="0" value="0" data-name="Cetirizine"
+            data-price="8" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihistamines4.jpg" alt="Fexofenadine" class="product-img" />
+          <h2 class="product-title">Fexofenadine 500g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Fexofenadine" class="quantity" min="0" value="0" data-name="Fexofenadine"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihistamines5.jpg" alt="Chlorpheniramine" class="product-img" />
+          <h2 class="product-title">Chlorpheniramine 100g</h2>
+          <p class="product-description">$5 </p>
+          <input type="number" id="Chlorpheniramine" class="quantity" min="0" value="0" data-name="Chlorpheniramine"
+            data-price="5" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihistamines.jpg" alt="Levocetirizine" class="product-img" />
+          <h2 class="product-title">Levocetirizine 400g</h2>
+          <p class="product-description">$9 </p>
+          <input type="number" id="Levocetirizine" class="quantity" min="0" value="0" data-name="Levocetirizine"
+            data-price="9" oninput="updateCart(this)">
+        </div>
+
+      </div>
+    </section>
+    <section class="shop container">
+      <h2 class="text-cnter">Antihypertensives</h2>
+      <div class="medicine-scroller" id="menu-items4">
+        <div class="product-box">
+          <img src="./images/Antihypertensives.jpg" alt="Lisinopril" class="product-img" />
+          <h2 class="product-title">Lisinopril 300g </h2>
+          <p class="product-description">$8 </p>
+          <input type="number" id="Lisinopril" class="quantity" min="0" value="0" data-name="Lisinopril"
+            data-price="8" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihypertensives1.jpg" alt="Amlodipine" class="product-img" />
+          <h2 class="product-title">Amlodipine 450g</h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Amlodipine" class="quantity" min="0" value="0" data-name="Amlodipine"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihypertensives2.jpg" alt="Losartan" class="product-img" />
+          <h2 class="product-title">Losartan 400g</h2>
+          <p class="product-description">$7 </p>
+          <input type="number" id="Losartan" class="quantity" min="0" value="0" data-name="Losartan"
+            data-price="7" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihypertensives3.jpg" alt="Metoprolol" class="product-img" />
+          <h2 class="product-title">Metoprolol 200g</h2>
+          <p class="product-description">$2 </p>
+          <input type="number" id="Metoprolol" class="quantity" min="0" value="0" data-name="Metoprolol"
+            data-price="2" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihypertensives4.jpg" alt="Carvedilol " class="product-img" />
+          <h2 class="product-title">Carvedilol 100g</h2>
+          <p class="product-description">$3 </p>
+          <input type="number" id="Carvedilol" class="quantity" min="0" value="0" data-name="Carvedilol"
+            data-price="3" oninput="updateCart(this)">
+        </div>
+
+        <div class="product-box">
+          <img src="./images/Antihypertensives5.jpg" alt="Clonidine" class="product-img" />
+          <h2 class="product-title">Clonidine 450g</h2>
+          <p class="product-description">$3 </p>
+          <input type="number" id="Clonidine" class="quantity" min="0" value="0" data-name="Clonidine"
+            data-price="3" oninput="updateCart(this)">
+        </div>
+
+      </div>
+    </section>
+
+    <section id="cart" class="sec-cart">
+      <h2>Your Cart</h2>
+      <table id="cartTable">
+        <thead>
+          <tr>
+            <th>Medicine Name</th>
+            <th>Quantity</th>
+            <th>Price/Unit</th>
+            <th>Total Amount</th>
+          </tr>
+        </thead>
+        <tbody id="cartTableBody">
+          <!-- Items will be dynamically added here -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="label">Total Cart Price:</td>
+            <td class="total" id="totalCartPrice">$0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="favorites" class="sec-favorites">
+      <button id="saveFavoritesBtn">Add to Favourites</button>
+      <button id="applyFavoritesBtn">Apply Favourites</button>
+      
+      <button onclick="redirectToCheckout()">Checkout</button>
+
+      <script>
+          function redirectToCheckout() {
+              var totalAmount = document.getElementById('totalCartPrice').innerText;
+              window.location.href = 'checkout.html?total=' + encodeURIComponent(totalAmount);
+          }
+      </script>
+    </section>
+
+    <script src="shop.js"></script>
+
+  </body>
+
+</html>
